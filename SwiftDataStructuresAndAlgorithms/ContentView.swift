@@ -16,6 +16,12 @@ struct ContentView: View {
                     label: {
                         Text("LinkedList")
                     })
+                
+                NavigationLink(
+                    destination: StackView(),
+                    label: {
+                        Text("Stack")
+                    })
             }
             .navigationTitle("Swift")
         }

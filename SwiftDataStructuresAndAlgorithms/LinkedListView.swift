@@ -117,7 +117,7 @@ struct LinkedListView: View {
 
         }
         .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
-        
+        .navigationTitle("LinkedList")
     }
 }
 
