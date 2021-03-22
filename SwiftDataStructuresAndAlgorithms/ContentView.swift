@@ -28,6 +28,12 @@ struct ContentView: View {
                     label: {
                         Text("Queue")
                     })
+                
+                NavigationLink(
+                    destination: TreeView(),
+                    label: {
+                        Text("Tree")
+                    })
             }
             .navigationTitle("Swift")
         }

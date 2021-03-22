@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B2231B52608B4C800DF27F8 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2231B42608B4C800DF27F8 /* Tree.swift */; };
+		9B2231B82608B7BB00DF27F8 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2231B72608B7BB00DF27F8 /* TreeView.swift */; };
 		9B6BBD5B2603410E005184B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BBD5A2603410E005184B6 /* AppDelegate.swift */; };
 		9B6BBD5D2603410E005184B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BBD5C2603410E005184B6 /* SceneDelegate.swift */; };
 		9B6BBD5F2603410E005184B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BBD5E2603410E005184B6 /* ContentView.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B2231B42608B4C800DF27F8 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		9B2231B72608B7BB00DF27F8 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		9B6BBD572603410E005184B6 /* SwiftDataStructuresAndAlgorithms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataStructuresAndAlgorithms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6BBD5A2603410E005184B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B6BBD5C2603410E005184B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				9B6BBD76260348D3005184B6 /* LinkedListView.swift */,
 				9B8A0D28260499C40002372E /* StackView.swift */,
 				9B8A0D2E2604AB380002372E /* QueueView.swift */,
+				9B2231B72608B7BB00DF27F8 /* TreeView.swift */,
 				9B6BBD602603410F005184B6 /* Assets.xcassets */,
 				9B6BBD652603410F005184B6 /* LaunchScreen.storyboard */,
 				9B6BBD682603410F005184B6 /* Info.plist */,
@@ -100,6 +105,7 @@
 				9B6BBD72260347F0005184B6 /* LinkedList.swift */,
 				9B8A0D252604987E0002372E /* Stack.swift */,
 				9B8A0D2B2604A4540002372E /* Queue.swift */,
+				9B2231B42608B4C800DF27F8 /* Tree.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -174,12 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2231B82608B7BB00DF27F8 /* TreeView.swift in Sources */,
 				9B6BBD77260348D3005184B6 /* LinkedListView.swift in Sources */,
 				9B6BBD5B2603410E005184B6 /* AppDelegate.swift in Sources */,
 				9B8A0D262604987E0002372E /* Stack.swift in Sources */,
 				9B8A0D29260499C50002372E /* StackView.swift in Sources */,
 				9B6BBD5D2603410E005184B6 /* SceneDelegate.swift in Sources */,
 				9B6BBD74260347F0005184B6 /* LinkedList.swift in Sources */,
+				9B2231B52608B4C800DF27F8 /* Tree.swift in Sources */,
 				9B6BBD5F2603410E005184B6 /* ContentView.swift in Sources */,
 				9B8A0D2C2604A4540002372E /* Queue.swift in Sources */,
 				9B8A0D2F2604AB380002372E /* QueueView.swift in Sources */,
