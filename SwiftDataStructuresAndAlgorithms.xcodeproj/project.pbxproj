@@ -24,6 +24,8 @@
 		9B8A0D2F2604AB380002372E /* QueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A0D2E2604AB380002372E /* QueueView.swift */; };
 		9B9123412609829A0029E478 /* DoublyLInkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123402609829A0029E478 /* DoublyLInkedList.swift */; };
 		9B912344260990820029E478 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B912343260990820029E478 /* RingBuffer.swift */; };
+		9B9123472609CD610029E478 /* BinaryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123462609CD610029E478 /* BinaryNode.swift */; };
+		9B91234E2609CEF50029E478 /* BinaryTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B91234D2609CEF50029E478 /* BinaryTreeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		9B8A0D2E2604AB380002372E /* QueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueView.swift; sourceTree = "<group>"; };
 		9B9123402609829A0029E478 /* DoublyLInkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLInkedList.swift; sourceTree = "<group>"; };
 		9B912343260990820029E478 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		9B9123462609CD610029E478 /* BinaryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryNode.swift; sourceTree = "<group>"; };
+		9B91234D2609CEF50029E478 /* BinaryTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 				9B8A0D28260499C40002372E /* StackView.swift */,
 				9B8A0D2E2604AB380002372E /* QueueView.swift */,
 				9B2231B72608B7BB00DF27F8 /* TreeView.swift */,
+				9B91234D2609CEF50029E478 /* BinaryTreeView.swift */,
 				9B6BBD602603410F005184B6 /* Assets.xcassets */,
 				9B6BBD652603410F005184B6 /* LaunchScreen.storyboard */,
 				9B6BBD682603410F005184B6 /* Info.plist */,
@@ -112,6 +117,7 @@
 				9B8A0D2B2604A4540002372E /* Queue.swift */,
 				9B2231B42608B4C800DF27F8 /* Tree.swift */,
 				9B912343260990820029E478 /* RingBuffer.swift */,
+				9B9123462609CD610029E478 /* BinaryNode.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -198,8 +204,10 @@
 				9B2231B52608B4C800DF27F8 /* Tree.swift in Sources */,
 				9B6BBD5F2603410E005184B6 /* ContentView.swift in Sources */,
 				9B8A0D2C2604A4540002372E /* Queue.swift in Sources */,
+				9B9123472609CD610029E478 /* BinaryNode.swift in Sources */,
 				9B8A0D2F2604AB380002372E /* QueueView.swift in Sources */,
 				9B6BBD73260347F0005184B6 /* Node.swift in Sources */,
+				9B91234E2609CEF50029E478 /* BinaryTreeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
