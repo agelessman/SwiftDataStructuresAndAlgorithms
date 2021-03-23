@@ -59,8 +59,8 @@ struct BinaryTreeView: View {
                 Text("\(value)")
                     .font(.caption2)
                     .foregroundColor(.primary)
-                    .padding(5)
-                    .background(Color.green)
+                    .padding()
+                    .background(Circle().foregroundColor(.green))
             }
             
             LazyHStack {

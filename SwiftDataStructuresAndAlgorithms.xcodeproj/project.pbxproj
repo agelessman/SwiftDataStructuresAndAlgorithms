@@ -26,6 +26,8 @@
 		9B912344260990820029E478 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B912343260990820029E478 /* RingBuffer.swift */; };
 		9B9123472609CD610029E478 /* BinaryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123462609CD610029E478 /* BinaryNode.swift */; };
 		9B91234E2609CEF50029E478 /* BinaryTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B91234D2609CEF50029E478 /* BinaryTreeView.swift */; };
+		9B9123522609E3D10029E478 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123512609E3D10029E478 /* BinarySearchTree.swift */; };
+		9B9123552609E50A0029E478 /* BinarySearchTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123542609E50A0029E478 /* BinarySearchTreeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		9B912343260990820029E478 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 		9B9123462609CD610029E478 /* BinaryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryNode.swift; sourceTree = "<group>"; };
 		9B91234D2609CEF50029E478 /* BinaryTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeView.swift; sourceTree = "<group>"; };
+		9B9123512609E3D10029E478 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
+		9B9123542609E50A0029E478 /* BinarySearchTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				9B8A0D2E2604AB380002372E /* QueueView.swift */,
 				9B2231B72608B7BB00DF27F8 /* TreeView.swift */,
 				9B91234D2609CEF50029E478 /* BinaryTreeView.swift */,
+				9B9123542609E50A0029E478 /* BinarySearchTreeView.swift */,
 				9B6BBD602603410F005184B6 /* Assets.xcassets */,
 				9B6BBD652603410F005184B6 /* LaunchScreen.storyboard */,
 				9B6BBD682603410F005184B6 /* Info.plist */,
@@ -118,6 +123,7 @@
 				9B2231B42608B4C800DF27F8 /* Tree.swift */,
 				9B912343260990820029E478 /* RingBuffer.swift */,
 				9B9123462609CD610029E478 /* BinaryNode.swift */,
+				9B9123512609E3D10029E478 /* BinarySearchTree.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B2231B82608B7BB00DF27F8 /* TreeView.swift in Sources */,
+				9B9123552609E50A0029E478 /* BinarySearchTreeView.swift in Sources */,
+				9B9123522609E3D10029E478 /* BinarySearchTree.swift in Sources */,
 				9B6BBD77260348D3005184B6 /* LinkedListView.swift in Sources */,
 				9B9123412609829A0029E478 /* DoublyLInkedList.swift in Sources */,
 				9B6BBD5B2603410E005184B6 /* AppDelegate.swift in Sources */,
