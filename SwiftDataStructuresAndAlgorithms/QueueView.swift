@@ -12,6 +12,7 @@ enum QueueType {
     case array
     case doublyLinkedList
     case ringBuffer
+    case doubleStack
 }
 
 class QueueViewModel: ObservableObject {
@@ -22,6 +23,7 @@ class QueueViewModel: ObservableObject {
     var queueArray = QueueArray<Int>()
     var queueDoublyLinkedList = QueueDoublyLinkedList<Int>()
     var queueRingBuffer = QueueRingBuffer<Int>(count: 20)
+    var queueDoubleStack = QueueStack<Int>()
     
     var anyCancellables = Set<AnyCancellable>()
     
@@ -38,6 +40,8 @@ class QueueViewModel: ObservableObject {
                     self?.values = self?.queueDoublyLinkedList.values ?? []
                 case .ringBuffer:
                     self?.values = self?.queueRingBuffer.values ?? []
+                case .doubleStack:
+                    self?.values = self?.queueDoubleStack.values ?? []
                 }
             }
             .store(in: &anyCancellables)
@@ -53,7 +57,10 @@ class QueueViewModel: ObservableObject {
             values = queueDoublyLinkedList.values
         case .ringBuffer:
             _ = queueRingBuffer.enqueue(count)
-            values = queueRingBuffer.values ?? []
+            values = queueRingBuffer.values
+        case .doubleStack:
+            _ = queueDoubleStack.enqueue(count)
+            values = queueDoubleStack.values
         }
         
         count += 1
@@ -69,7 +76,10 @@ class QueueViewModel: ObservableObject {
             values = queueDoublyLinkedList.values
         case .ringBuffer:
             _ = queueRingBuffer.dequeue()
-            values = queueRingBuffer.values ?? []
+            values = queueRingBuffer.values
+        case .doubleStack:
+            _ = queueDoubleStack.dequeue()
+            values = queueDoubleStack.values
         }
     }
     
@@ -81,6 +91,8 @@ class QueueViewModel: ObservableObject {
             return Color.blue
         case .ringBuffer:
             return Color.orange
+        case .doubleStack:
+            return Color.purple
         }
     }
 }
@@ -102,6 +114,7 @@ struct QueueView: View {
                 Text("array").tag(QueueType.array)
                 Text("doubleLink").tag(QueueType.doublyLinkedList)
                 Text("ringBuffer").tag(QueueType.ringBuffer)
+                Text("doubleStack").tag(QueueType.doubleStack)
             }
             .pickerStyle(SegmentedPickerStyle())
             

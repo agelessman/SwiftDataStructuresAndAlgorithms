@@ -13,6 +13,7 @@ public protocol Queue {
     mutating func dequeue() -> Element?
     var isEmpty: Bool { get }
     var peek: Element? { get }
+    var values: [Element] { get }
 }
 
 public struct QueueArray<T>: Queue {
@@ -36,7 +37,7 @@ public struct QueueArray<T>: Queue {
         return isEmpty ? nil : array.removeFirst()
     }
     
-    var values: [T] {
+    public var values: [T] {
         return array
     }
 }
@@ -63,7 +64,7 @@ public struct QueueDoublyLinkedList<T>: Queue {
         return linkedList.isEmpty ? nil : linkedList.remove(linkedList.head!)
     }
     
-    var values: [T] {
+    public var values: [T] {
         var result = [T]()
         linkedList.forEach {
             result.append($0.value)
@@ -95,7 +96,39 @@ public struct QueueRingBuffer<T>: Queue {
         ringBuffer.read()
     }
     
-    var values: [T]? {
-        ringBuffer.values
+    public var values: [T] {
+        ringBuffer.values ?? []
+    }
+}
+
+public struct QueueStack<T>: Queue {
+    private var leftStack: [T] = []
+    private var rightStack: [T] = []
+    
+    public init() {}
+    
+    public var isEmpty: Bool {
+        leftStack.isEmpty && rightStack.isEmpty
+    }
+    
+    public var peek: T? {
+        !leftStack.isEmpty ? leftStack.last : rightStack.first
+    }
+    
+    public mutating func enqueue(_ element: T) -> Bool {
+        rightStack.append(element)
+        return true
+    }
+    
+    public mutating func dequeue() -> T? {
+        if leftStack.isEmpty {
+            leftStack = rightStack.reversed()
+            rightStack.removeAll()
+        }
+        return leftStack.removeLast()
+    }
+    
+    public var values: [T] {
+        leftStack.reversed() + rightStack
     }
 }
