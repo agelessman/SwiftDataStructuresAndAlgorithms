@@ -22,6 +22,8 @@
 		9B8A0D29260499C50002372E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A0D28260499C40002372E /* StackView.swift */; };
 		9B8A0D2C2604A4540002372E /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A0D2B2604A4540002372E /* Queue.swift */; };
 		9B8A0D2F2604AB380002372E /* QueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A0D2E2604AB380002372E /* QueueView.swift */; };
+		9B9123412609829A0029E478 /* DoublyLInkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123402609829A0029E478 /* DoublyLInkedList.swift */; };
+		9B912344260990820029E478 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B912343260990820029E478 /* RingBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		9B8A0D28260499C40002372E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		9B8A0D2B2604A4540002372E /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		9B8A0D2E2604AB380002372E /* QueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueView.swift; sourceTree = "<group>"; };
+		9B9123402609829A0029E478 /* DoublyLInkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLInkedList.swift; sourceTree = "<group>"; };
+		9B912343260990820029E478 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +107,11 @@
 			children = (
 				9B6BBD71260347F0005184B6 /* Node.swift */,
 				9B6BBD72260347F0005184B6 /* LinkedList.swift */,
+				9B9123402609829A0029E478 /* DoublyLInkedList.swift */,
 				9B8A0D252604987E0002372E /* Stack.swift */,
 				9B8A0D2B2604A4540002372E /* Queue.swift */,
 				9B2231B42608B4C800DF27F8 /* Tree.swift */,
+				9B912343260990820029E478 /* RingBuffer.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -182,8 +188,10 @@
 			files = (
 				9B2231B82608B7BB00DF27F8 /* TreeView.swift in Sources */,
 				9B6BBD77260348D3005184B6 /* LinkedListView.swift in Sources */,
+				9B9123412609829A0029E478 /* DoublyLInkedList.swift in Sources */,
 				9B6BBD5B2603410E005184B6 /* AppDelegate.swift in Sources */,
 				9B8A0D262604987E0002372E /* Stack.swift in Sources */,
+				9B912344260990820029E478 /* RingBuffer.swift in Sources */,
 				9B8A0D29260499C50002372E /* StackView.swift in Sources */,
 				9B6BBD5D2603410E005184B6 /* SceneDelegate.swift in Sources */,
 				9B6BBD74260347F0005184B6 /* LinkedList.swift in Sources */,
