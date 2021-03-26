@@ -58,6 +58,12 @@ struct ContentView: View {
                     label: {
                         Text("Trie")
                     })
+                
+                NavigationLink(
+                    destination: BinarySearchView(),
+                    label: {
+                        Text("BinarySearch")
+                    })
             }
             .navigationTitle("Swift")
         }
