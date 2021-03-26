@@ -69,3 +69,34 @@ extension Trie {
         }
     }
 }
+
+extension Trie where CollectionType: RangeReplaceableCollection {
+    func collections(startingWith prefix: CollectionType) -> [CollectionType] {
+        var current = root
+        
+        for element in prefix {
+            guard let child = current.children[element] else {
+                return []
+            }
+            current = child
+        }
+        
+        return collections(startingWith: prefix, after: current)
+    }
+    
+    private func collections(startingWith prefix: CollectionType, after node: Node) -> [CollectionType] {
+        var result: [CollectionType] = []
+        
+        if node.isTerminating {
+            result.append(prefix)
+        }
+        
+        for child in node.children.values {
+            var prefix = prefix
+            prefix.append(child.key!)
+            result.append(contentsOf: collections(startingWith: prefix, after: child))
+        }
+        
+        return result
+    }
+}

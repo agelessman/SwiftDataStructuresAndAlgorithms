@@ -18,13 +18,16 @@ class TrieViewModel: ObservableObject {
     
     @Published var removeText = ""
     
+    @Published var searchTexts: [String] = []
+    
     var anyCancellables = Set<AnyCancellable>()
     
     init() {
         tree.insert("cute")
         tree.insert("cat")
-        tree.insert("contains")
+        tree.insert("car")
         tree.insert("com")
+        tree.insert("call")
         
         $inputText
             .map {
@@ -32,6 +35,13 @@ class TrieViewModel: ObservableObject {
             }
             .assign(to: \.contains, on: self)
             .store(in: &anyCancellables)
+        
+    $inputText
+        .map {
+            self.tree.collections(startingWith: $0)
+        }
+        .assign(to: \.searchTexts, on: self)
+        .store(in: &anyCancellables)
         
         $removeText
             .sink { someValue in
@@ -67,12 +77,18 @@ struct TrieView: View {
             }
             .animation(.easeInOut)
             
-            HStack {
-                TextField("请输入要查询的字符串", text: $viewModel.inputText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                Text(viewModel.contains ? "存在" : "不存在")
-                    .foregroundColor(.red)
+            VStack {
+                HStack {
+                    TextField("请输入要查询的字符串", text: $viewModel.inputText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                    Text(viewModel.contains ? "存在" : "不存在")
+                        .foregroundColor(.red)
+                }
+                
+                ForEach(viewModel.searchTexts, id: \.self) { text in
+                    Text(text)
+                }
             }
             .padding(.horizontal, 10)
 
@@ -96,6 +112,7 @@ struct TrieView: View {
 
             }
             .padding(.horizontal, 10)
+            
 
             Spacer()
         }
