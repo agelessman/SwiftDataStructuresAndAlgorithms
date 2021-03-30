@@ -64,6 +64,12 @@ struct ContentView: View {
                     label: {
                         Text("BinarySearch")
                     })
+                
+                NavigationLink(
+                    destination: HeapView(),
+                    label: {
+                        Text("Heap")
+                    })
             }
             .navigationTitle("Swift")
         }

@@ -9,7 +9,7 @@ import Foundation
 
 struct BinarySearchTree<Element: Comparable> {
     private(set) var root: BinaryNode<Element>?
-    init() { }
+    init(root: BinaryNode<Element>? = nil) { self.root = root }
 }
 
 extension BinarySearchTree {
