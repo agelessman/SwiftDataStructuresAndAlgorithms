@@ -13,6 +13,7 @@ enum QueueType {
     case doublyLinkedList
     case ringBuffer
     case doubleStack
+    case priority
 }
 
 class QueueViewModel: ObservableObject {
@@ -24,6 +25,7 @@ class QueueViewModel: ObservableObject {
     var queueDoublyLinkedList = QueueDoublyLinkedList<Int>()
     var queueRingBuffer = QueueRingBuffer<Int>(count: 20)
     var queueDoubleStack = QueueStack<Int>()
+    var queuePriority = PriorityQueue<Int>(sort: >, elements: [])
     
     var anyCancellables = Set<AnyCancellable>()
     
@@ -42,6 +44,8 @@ class QueueViewModel: ObservableObject {
                     self?.values = self?.queueRingBuffer.values ?? []
                 case .doubleStack:
                     self?.values = self?.queueDoubleStack.values ?? []
+                case .priority:
+                    self?.values = self?.queuePriority.values ?? []
                 }
             }
             .store(in: &anyCancellables)
@@ -61,6 +65,9 @@ class QueueViewModel: ObservableObject {
         case .doubleStack:
             _ = queueDoubleStack.enqueue(count)
             values = queueDoubleStack.values
+        case .priority:
+            _ = queuePriority.enqueue(count)
+            values = queuePriority.values
         }
         
         count += 1
@@ -80,6 +87,9 @@ class QueueViewModel: ObservableObject {
         case .doubleStack:
             _ = queueDoubleStack.dequeue()
             values = queueDoubleStack.values
+        case .priority:
+            _ = queuePriority.dequeue()
+            values = queuePriority.values
         }
     }
     
@@ -93,6 +103,8 @@ class QueueViewModel: ObservableObject {
             return Color.orange
         case .doubleStack:
             return Color.purple
+        case .priority:
+            return Color.red
         }
     }
 }
@@ -115,6 +127,7 @@ struct QueueView: View {
                 Text("doubleLink").tag(QueueType.doublyLinkedList)
                 Text("ringBuffer").tag(QueueType.ringBuffer)
                 Text("doubleStack").tag(QueueType.doubleStack)
+                Text("priority").tag(QueueType.priority)
             }
             .pickerStyle(SegmentedPickerStyle())
             
