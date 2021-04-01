@@ -7,70 +7,35 @@
 
 import SwiftUI
 
+extension View {
+    func toAnyView() -> AnyView {
+        AnyView(self)
+    }
+}
+
 struct ContentView: View {
+    @State var views: [String: AnyView] = ["LinkedList": LinkedListView().toAnyView(),
+                                        "Stack": StackView().toAnyView(),
+                                        "Queue": QueueView().toAnyView(),
+                                        "Tree": TreeView().toAnyView(),
+                                        "BinaryTree": BinaryTreeView().toAnyView(),
+                                        "BinarySearchTree": BinarySearchTreeView().toAnyView(),
+                                        "AVLTree": AVLTreeView().toAnyView(),
+                                        "Trie": TrieView().toAnyView(),
+                                        "BinarySearch": BinarySearchView().toAnyView(),
+                                        "Heap": HeapView().toAnyView(),
+                                        "Sort": SortView().toAnyView()]
+    
     var body: some View {
         NavigationView {
-            List { 
+            List(Array(views.keys), id: \.self) { key in
                 NavigationLink(
-                    destination: LinkedListView(),
+                    destination: views[key],
                     label: {
-                        Text("LinkedList")
-                    })
-                
-                NavigationLink(
-                    destination: StackView(),
-                    label: {
-                        Text("Stack")
-                    })
-                
-                NavigationLink(
-                    destination: QueueView(),
-                    label: {
-                        Text("Queue")
-                    })
-                
-                NavigationLink(
-                    destination: TreeView(),
-                    label: {
-                        Text("Tree")
-                    })
-                
-                NavigationLink(
-                    destination: BinaryTreeView(),
-                    label: {
-                        Text("BinaryTree")
-                    })
-                
-                NavigationLink(
-                    destination: BinarySearchTreeView(),
-                    label: {
-                        Text("BinarySearchTree")
-                    })
-                
-                NavigationLink(
-                    destination: AVLTreeView(),
-                    label: {
-                        Text("AVLTree")
-                    })
-                
-                NavigationLink(
-                    destination: TrieView(),
-                    label: {
-                        Text("Trie")
-                    })
-                
-                NavigationLink(
-                    destination: BinarySearchView(),
-                    label: {
-                        Text("BinarySearch")
-                    })
-                
-                NavigationLink(
-                    destination: HeapView(),
-                    label: {
-                        Text("Heap")
+                        Text("\(key)")
                     })
             }
+
             .navigationTitle("Swift")
         }
     }
