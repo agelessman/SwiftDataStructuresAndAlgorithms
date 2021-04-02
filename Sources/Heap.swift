@@ -70,6 +70,10 @@ struct Heap<Element: Equatable> {
     }
     
     mutating func siftDown(from index: Int) {
+        siftDown(from: index, upTo: count)
+    }
+    
+    mutating func siftDown(from index: Int, upTo size: Int) {
         var parent = index
         
         while true {
@@ -78,11 +82,11 @@ struct Heap<Element: Equatable> {
             
             var candidate = parent
             
-            if left < count && sort(elements[left], elements[candidate]) {
+            if left < size && sort(elements[left], elements[candidate]) {
                 candidate = left
             }
             
-            if right < count && sort(elements[right], elements[candidate]) {
+            if right < size && sort(elements[right], elements[candidate]) {
                 candidate = right
             }
             

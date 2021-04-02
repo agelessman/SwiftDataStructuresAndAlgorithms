@@ -34,32 +34,76 @@ struct SortView: View {
                 }
             }
         
-            
-            Button("冒泡排序") {
-                withAnimation {
-                    sortedArray = array
-                    bubbleSort(&sortedArray)
+            Group {
+                Button("冒泡排序") {
+                    withAnimation {
+                        sortedArray = array
+                        bubbleSort(&sortedArray)
+                    }
                 }
-            }
-            
-            Button("选择排序") {
-                withAnimation {
-                    sortedArray = array
-                    selectionSort(&sortedArray)
+                
+                Button("选择排序") {
+                    withAnimation {
+                        sortedArray = array
+                        selectionSort(&sortedArray)
+                    }
                 }
-            }
-            
-            Button("插入排序") {
-                withAnimation {
-                    sortedArray = array
-                    insertionSort(&sortedArray)
+                
+                Button("插入排序") {
+                    withAnimation {
+                        sortedArray = array
+                        insertionSort(&sortedArray)
+                    }
                 }
-            }
-            
-            Button("归并排序") {
-                withAnimation {
-                    sortedArray = array
-                    sortedArray = mergeSort(sortedArray)
+                
+                Button("归并排序") {
+                    withAnimation {
+                        sortedArray = array
+                        sortedArray = mergeSort(sortedArray)
+                    }
+                }
+                
+                Button("基数排序") {
+                    withAnimation {
+                        sortedArray = array
+                        sortedArray.radixSort()
+                    }
+                }
+                
+                Button("堆排序") {
+                    withAnimation {
+                        sortedArray = array
+                        let heap = Heap(sort: >, elements: sortedArray)
+                        sortedArray = heap.sorted()
+                    }
+                }
+                
+                Button("快速排序Naive") {
+                    withAnimation {
+                        sortedArray = array
+                        sortedArray = quickSortNaive(sortedArray)
+                    }
+                }
+                
+                Button("快速排序Lomulo") {
+                    withAnimation {
+                        sortedArray = array
+                        quickSortLomulo(&sortedArray, low: 0, high: array.count - 1)
+                    }
+                }
+                
+                Button("快速排序Hoare") {
+                    withAnimation {
+                        sortedArray = array
+                        quickSortHoare(&sortedArray, low: 0, high: array.count - 1)
+                    }
+                }
+                
+                Button("快速排序Lomulo中位数优化") {
+                    withAnimation {
+                        sortedArray = array
+                        quickSortMedian(&sortedArray, low: 0, high: array.count - 1)
+                    }
                 }
             }
         }

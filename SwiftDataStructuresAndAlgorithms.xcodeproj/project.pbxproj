@@ -26,6 +26,8 @@
 		9B8A0D29260499C50002372E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A0D28260499C40002372E /* StackView.swift */; };
 		9B8A0D2C2604A4540002372E /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A0D2B2604A4540002372E /* Queue.swift */; };
 		9B8A0D2F2604AB380002372E /* QueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A0D2E2604AB380002372E /* QueueView.swift */; };
+		9B8A32B02616C179004BE1C7 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A32AF2616C179004BE1C7 /* Graph.swift */; };
+		9B8A32B32616F510004BE1C7 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8A32B22616F510004BE1C7 /* GraphView.swift */; };
 		9B9123412609829A0029E478 /* DoublyLInkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123402609829A0029E478 /* DoublyLInkedList.swift */; };
 		9B912344260990820029E478 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B912343260990820029E478 /* RingBuffer.swift */; };
 		9B9123472609CD610029E478 /* BinaryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9123462609CD610029E478 /* BinaryNode.swift */; };
@@ -63,6 +65,8 @@
 		9B8A0D28260499C40002372E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		9B8A0D2B2604A4540002372E /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		9B8A0D2E2604AB380002372E /* QueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueView.swift; sourceTree = "<group>"; };
+		9B8A32AF2616C179004BE1C7 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		9B8A32B22616F510004BE1C7 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		9B9123402609829A0029E478 /* DoublyLInkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLInkedList.swift; sourceTree = "<group>"; };
 		9B912343260990820029E478 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 		9B9123462609CD610029E478 /* BinaryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryNode.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				9BA134CC260D907C0045C7E1 /* BinarySearchView.swift */,
 				9BA134D2260DC5770045C7E1 /* HeapView.swift */,
 				9B348A88261325DE00397243 /* SortView.swift */,
+				9B8A32B22616F510004BE1C7 /* GraphView.swift */,
 				9B6BBD602603410F005184B6 /* Assets.xcassets */,
 				9B6BBD652603410F005184B6 /* LaunchScreen.storyboard */,
 				9B6BBD682603410F005184B6 /* Info.plist */,
@@ -157,6 +162,7 @@
 				9BA134C9260D8E810045C7E1 /* BinarySearch.swift */,
 				9BA134CF260DB91F0045C7E1 /* Heap.swift */,
 				9B348A85261324E600397243 /* Sort.swift */,
+				9B8A32AF2616C179004BE1C7 /* Graph.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 				9B9123522609E3D10029E478 /* BinarySearchTree.swift in Sources */,
 				9B6BBD77260348D3005184B6 /* LinkedListView.swift in Sources */,
 				9B9123412609829A0029E478 /* DoublyLInkedList.swift in Sources */,
+				9B8A32B32616F510004BE1C7 /* GraphView.swift in Sources */,
 				9B6BBD5B2603410E005184B6 /* AppDelegate.swift in Sources */,
 				9B8A0D262604987E0002372E /* Stack.swift in Sources */,
 				9B912344260990820029E478 /* RingBuffer.swift in Sources */,
@@ -255,6 +262,7 @@
 				9B348A89261325DE00397243 /* SortView.swift in Sources */,
 				9B8A0D2C2604A4540002372E /* Queue.swift in Sources */,
 				9B9123472609CD610029E478 /* BinaryNode.swift in Sources */,
+				9B8A32B02616C179004BE1C7 /* Graph.swift in Sources */,
 				9B8A0D2F2604AB380002372E /* QueueView.swift in Sources */,
 				9B6BBD73260347F0005184B6 /* Node.swift in Sources */,
 				9B348A86261324E600397243 /* Sort.swift in Sources */,

@@ -24,7 +24,8 @@ struct ContentView: View {
                                         "Trie": TrieView().toAnyView(),
                                         "BinarySearch": BinarySearchView().toAnyView(),
                                         "Heap": HeapView().toAnyView(),
-                                        "Sort": SortView().toAnyView()]
+                                        "Sort": SortView().toAnyView(),
+                                        "Graph": GraphView().toAnyView()]
     
     var body: some View {
         NavigationView {

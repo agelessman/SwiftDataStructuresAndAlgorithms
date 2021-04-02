@@ -108,3 +108,129 @@ private func merge<Element>(_ left: [Element], _ right: [Element]) -> [Element] 
     
     return result
 }
+
+extension Array where Element == Int {
+    mutating func radixSort() {
+        let base = 10
+        var done = false
+        var digits = 1
+        
+        while !done {
+            done = true
+            
+            var buckets: [[Int]] = .init(repeating: [], count: base)
+            
+            forEach { number in
+                let remainingPart = number / digits
+                
+                if remainingPart > 0 {
+                    done = false
+                }
+                
+                let digit = remainingPart % base
+                buckets[digit].append(number)
+            }
+            
+            digits *= base
+            self = buckets.flatMap {
+                $0
+            }
+        }
+    }
+}
+
+extension Heap {
+    func sorted() -> [Element] {
+        var heap = Heap(sort: sort, elements: elements)
+        for index in heap.elements.indices.reversed() {
+            heap.elements.swapAt(0, index)
+            heap.siftDown(from: 0, upTo: index)
+        }
+        return heap.elements
+    }
+}
+
+func quickSortNaive<T: Comparable>(_ a: [T]) -> [T] {
+    guard a.count > 1 else {
+        return a
+    }
+    let pivot = a[a.count / 2]
+    let less = a.filter { $0 < pivot }
+    let more = a.filter { $0 > pivot }
+    let equal = a.filter { $0 == pivot }
+    return quickSortNaive(less) + equal + quickSortNaive(more)
+}
+
+func partitionLomuto<T: Comparable>(_ a: inout [T], low: Int, high: Int) -> Int {
+    let pivot = a[high]
+    var i = low
+    
+    for j in low..<high {
+        if a[j] <= pivot {
+            a.swapAt(i, j)
+            i += 1
+        }
+    }
+    
+    a.swapAt(i, high)
+    
+    return i
+}
+
+func quickSortLomulo<T: Comparable>(_ a: inout [T], low: Int, high: Int){
+    if low < high {
+        let pivot = partitionLomuto(&a, low: low, high: high)
+        quickSortLomulo(&a, low: low, high: pivot - 1)
+        quickSortLomulo(&a, low: pivot + 1, high: high)
+    }
+}
+
+func partitionHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) -> Int {
+    let pivot = a[low]
+    var i = low - 1
+    var j = high + 1
+    while true {
+        repeat { j -= 1 } while a[j] > pivot
+        repeat { i += 1 } while a[i] < pivot
+        
+        if i < j {
+            a.swapAt(i, j)
+        } else {
+            return j
+        }
+    }
+}
+
+func quickSortHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) {
+    if low < high {
+        let pivot = partitionHoare(&a, low: low, high: high)
+        quickSortHoare(&a, low: low, high: pivot )
+        quickSortHoare(&a, low: pivot + 1, high: high)
+    }
+}
+
+/// 对pivot的优化，中位数
+func medianOfThree<T: Comparable>(_ a: inout [T], low: Int, high: Int) -> Int {
+    let center = (low + high) / 2
+    
+    if a[low] > a[center] {
+        a.swapAt(low, center)
+    }
+    if a[low] > a[high] {
+        a.swapAt(low, high)
+    }
+    if a[center] > a[high] {
+        a.swapAt(center, high)
+    }
+    return center
+}
+
+func quickSortMedian<T: Comparable>(_ a: inout [T], low: Int, high: Int){
+    if low < high {
+        let pivotIndex = medianOfThree(&a, low: low, high: high)
+        a.swapAt(pivotIndex, high)
+        let pivot = partitionLomuto(&a, low: low, high: high)
+        quickSortLomulo(&a, low: low, high: pivot - 1)
+        quickSortLomulo(&a, low: pivot + 1, high: high)
+    }
+}
